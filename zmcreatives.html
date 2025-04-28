@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZMCREATIVES | Web Development Agency</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="navbar">
+        <h3 class="logo"><a href="home">ZMCREATIVES</a></h3>
+        <nav>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="services">Services</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+            <!-- LOGIN BUTTON -->
+            <button class="sign-btn">Sign In</button>
+        </nav>
+
+    </header>
+
+    <!-- BANNER SECTION -->
+    <section class="banner">
+        <div class="banner-left">
+            <h1>Building Your Online Office</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat non, provident eos vel unde molestias sapiente atque labore. Reprehenderit nam iure alias esse doloribus sed?</p>
+        </div>
+        <div class="banner-right"></div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur perspiciatis vel eveniet, facilis reprehenderit doloribus, commodi sint nihil excepturi similique perferendis atque labore illo. Ipsa?</p>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="video-section" id="video">
+        <h1>Watch how website helps boost your Business</h1>
+        <div class="video-content">
+            <iframe src="youtube/embed" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+        </div>
+    </section>
+    
+    <!-- OUR SERVICES SECTION -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="services-item">
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ab enim unde sapiente odit vitae ratione quis officiis iste nesciunt!</p>
+            </div>
+    
+            <div class="services-item">
+                <h3>Cyber Security</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, temporibus natus? Voluptate officia eum quibusdam corrupti a possimus repellendus voluptates!</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <form id="contactForm" onsubmit="return validateForm()">
+            <input type="text" class="hidden" id="name" placeholder="Enter Name" ><span id="nameError">Name field is empty!</span>
+            <input type="email" class="hidden" id="email emailError" placeholder="Enter Email"><span id="emailError">Email is required!</span>
+            <textarea id="message" cols="40" rows="5" placeholder="Text Message"></textarea><span class="hidden" id="messageError">Message field cannot be empty</span>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta" id="cta">
+        <h2>Ready to get started</h2>
+        <p>Contact Us today let's work together towards 
+            bringing your vision to reality.
+        </p>
+        <button class="cta-btn">Get Started</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="social-icons">
+            <a href=""><i class="fa fa-facebook"></i></a>
+            <a href=""><i class="fa fa-x"></i></a>
+            <a href=""><i class="fa fa-instagram"></i></a>
+            <a href=""><i class="fa fa-linkedin"></i></a>
+        </div>
+
+        <p>ZMCREATIVES &copy;2021. All rights, reserved.</p>
+    </footer>
+
+    <script>
+        // INITIALIZE AOS
+        AOS.init();
+
+        // FORM VALIDATION
+        function validateForm(){
+            let isValid = true;
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            document.getElementById("nameError").classList.add("hidden");
+            document.getElementById("emailError").classList.add("hidden");
+            document.getElementById("messageError").classList.add("hidden");
+
+            if (name === ""){
+                document.getElementById("nameError").classList.remove("hidden");
+                isValid = false;
+            }
+
+            if (email === "" || !email.includes("@")){
+                document.getElementById("emailError").classList.remove("hidden");
+                isValid = false;
+            }
+
+            if (message === ""){
+                document.getElementById("messageError").classList.remove("hidden");
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+    </script>
+</body>
+</html>
